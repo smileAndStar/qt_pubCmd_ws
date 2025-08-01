@@ -1,0 +1,8 @@
+prefix=/home/smile/ros_ws/qt_cmd_vel_ws/install
+
+Name: qt_cmd_vel
+Description: Description of qt_cmd_vel
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

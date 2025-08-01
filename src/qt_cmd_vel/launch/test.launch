@@ -1,0 +1,11 @@
+<launch>
+    <!-- rosrun turtlesim turtlesim_node -->
+    <node pkg="turtlesim" type="turtlesim_node"  name="turtlesim_node" />
+
+    <!-- rosrun qt_cmd_vel qt_cmd_vel_node -->
+    <node pkg="qt_cmd_vel" type="qt_cmd_vel_node" name="qt_cmd_vel_node" />
+
+</launch>
+
+
+

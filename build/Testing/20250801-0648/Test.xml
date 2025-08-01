@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20250801-0648-Experimental"
+	Name="ubuntu"
+	Generator="ctest-3.16.3"
+	CompilerName="/opt/FriendlyARM/toolchain/11.3-aarch64/bin/aarch64-cortexa53-linux-gnu-g++"
+	CompilerVersion="11.3.0"
+	OSName="Linux"
+	Hostname="ubuntu"
+	OSRelease="5.15.0-139-generic"
+	OSVersion="#149~20.04.1-Ubuntu SMP Wed Apr 16 08:29:56 UTC 2025"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="AuthenticAMD"
+	VendorID="Advanced Micro Devices"
+	FamilyID="25"
+	ModelID="117"
+	ProcessorCacheSize="1024"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="8"
+	TotalVirtualMemory="2047"
+	TotalPhysicalMemory="7902"
+	LogicalProcessorsPerPhysical="1"
+	ProcessorClockFrequency="3792.94"
+	>
+	<Testing>
+		<StartDateTime>Jul 31 23:48 PDT</StartDateTime>
+		<StartTestTime>1754030881</StartTestTime>
+		<TestList/>
+		<EndDateTime>Jul 31 23:48 PDT</EndDateTime>
+		<EndTestTime>1754030881</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

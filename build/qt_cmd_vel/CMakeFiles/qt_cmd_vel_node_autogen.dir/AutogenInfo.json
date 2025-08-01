@@ -1,0 +1,47 @@
+{
+	"BUILD_DIR" : "/home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/qt_cmd_vel_node_autogen",
+	"CMAKE_BINARY_DIR" : "/home/smile/ros_ws/qt_cmd_vel_ws/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_SOURCE_DIR" : "/home/smile/ros_ws/qt_cmd_vel_ws/src",
+	"HEADERS" : [],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/qt_cmd_vel_node_autogen/include",
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "/home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/CMakeFiles/qt_cmd_vel_node_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "",
+	"QT_UIC_EXECUTABLE" : "/opt/Qt5.12.8/5.12.8/gcc_64/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"SETTINGS_FILE" : "/home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/CMakeFiles/qt_cmd_vel_node_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/BtnControl.cpp",
+			"mU"
+		],
+		[
+			"/home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/CmdPub.cpp",
+			"mU"
+		],
+		[ "/home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/main.cpp", "mU" ],
+		[
+			"/home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/widget.cpp",
+			"mU"
+		],
+		[
+			"/home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/widrocker.cpp",
+			"mU"
+		],
+		[
+			"/home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/worker.cpp",
+			"mU"
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}
