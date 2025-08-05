@@ -31,8 +31,9 @@ widhealthMnt::widhealthMnt(QWidget *parent) :
             // 格式化数据
             QString newData;
             newData += "========================================\n";
-            newData += QString("User Detected: %1\n").arg(is_user_detected(data.state) ? "Yes" : "No");
-            newData += QString("Heart Rate:    %1 bpm\n").arg(data.heartrate);
+            newData += QString("请将手中轻放在设备上，等待数秒数值稳定后观察读数\n");
+            newData += QString("用户检测: %1\n").arg(is_user_detected(data.state) ? "是" : "否");
+            newData += QString("心率:    %1 bpm\n").arg(data.heartrate);
             newData += QString("SpO2:          %1 %%\n").arg(data.spo2);
             newData += QString("SDNN:          %1\n").arg(data.sdnn);
             newData += QString("Fatigue:       %1\n").arg(get_fatigue_status(data.sdnn));
@@ -83,9 +84,8 @@ void widhealthMnt::on_BtnBack2_clicked()
 
 void widhealthMnt::updateDisplay(QString text)
 {
-    // 在主线程中更新UI
-    outputText += text;
-    ui->plainTextEdit->setPlainText(outputText);
+    // 在主线程中更新UI - 实时刷新，不累积历史数据
+    ui->plainTextEdit->setPlainText(text);
     
     // 自动滚动到底部
     ui->plainTextEdit->moveCursor(QTextCursor::End);
