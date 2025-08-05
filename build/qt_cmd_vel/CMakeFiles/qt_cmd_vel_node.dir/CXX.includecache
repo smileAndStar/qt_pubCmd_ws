@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/include/qt_cmd_vel/moc_widget.cpp
-../../../../src/qt_cmd_vel/include/qt_cmd_vel/widget.h
-/home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/include/qt_cmd_vel/widget.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
 /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/include/qt_cmd_vel/moc_widhealthmnt.cpp
 ../../../../src/qt_cmd_vel/include/qt_cmd_vel/widhealthmnt.h
 /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/include/qt_cmd_vel/widhealthmnt.h
@@ -21,24 +13,6 @@ QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
-
-/home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/include/qt_cmd_vel/moc_widrocker.cpp
-../../../../src/qt_cmd_vel/include/qt_cmd_vel/widrocker.h
-/home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/include/qt_cmd_vel/widrocker.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/include/qt_cmd_vel/moc_worker.cpp
-../../../../src/qt_cmd_vel/include/qt_cmd_vel/worker.h
-/home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/include/qt_cmd_vel/worker.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-/home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/qrc_resource.cpp
 
 /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/bin/include/healthMnt.h
 string
@@ -133,18 +107,14 @@ qt_cmd_vel/widhealthmnt.h
 /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/qt_cmd_vel/widhealthmnt.h
 ui_widhealthmnt.h
 /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/ui_widhealthmnt.h
-
-/home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/widrocker.cpp
-qt_cmd_vel/widrocker.h
-/home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/qt_cmd_vel/widrocker.h
-ui_widrocker.h
-/home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/ui_widrocker.h
-QDebug
+QTextCursor
+-
+QMetaObject
 -
 
-/opt/Qt5.12.8/5.12.8/gcc_64/include/QtCore/QDebug
-qdebug.h
-/opt/Qt5.12.8/5.12.8/gcc_64/include/QtCore/qdebug.h
+/opt/Qt5.12.8/5.12.8/gcc_64/include/QtCore/QMetaObject
+qobjectdefs.h
+/opt/Qt5.12.8/5.12.8/gcc_64/include/QtCore/qobjectdefs.h
 
 /opt/Qt5.12.8/5.12.8/gcc_64/include/QtCore/QObject
 qobject.h
@@ -907,6 +877,10 @@ qevent.h
 /opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/QPainter
 qpainter.h
 /opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qpainter.h
+
+/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/QTextCursor
+qtextcursor.h
+/opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qtextcursor.h
 
 /opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qabstracttextdocumentlayout.h
 QtGui/qtguiglobal.h
@@ -2392,17 +2366,5 @@ QtWidgets/QDialog
 QtWidgets/QPlainTextEdit
 -
 QtWidgets/QPushButton
--
-
-qt_cmd_vel/qt_cmd_vel_node_autogen/include/ui_widrocker.h
-QtCore/QVariant
--
-QtGui/QIcon
--
-QtWidgets/QApplication
--
-QtWidgets/QPushButton
--
-QtWidgets/QWidget
 -
 

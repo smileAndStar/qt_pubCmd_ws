@@ -1095,6 +1095,7 @@ qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: /home/smile/ro
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/bin/include/health_monitor.h
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/include/qt_cmd_vel/widhealthmnt.h
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/widhealthmnt.cpp
+qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: /opt/Qt5.12.8/5.12.8/gcc_64/include/QtCore/QMetaObject
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: /opt/Qt5.12.8/5.12.8/gcc_64/include/QtCore/QString
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: /opt/Qt5.12.8/5.12.8/gcc_64/include/QtCore/QVariant
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: /opt/Qt5.12.8/5.12.8/gcc_64/include/QtCore/qalgorithms.h
@@ -1172,6 +1173,7 @@ qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: /opt/Qt5.12.8/
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: /opt/Qt5.12.8/5.12.8/gcc_64/include/QtCore/qvector.h
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: /opt/Qt5.12.8/5.12.8/gcc_64/include/QtCore/qversiontagging.h
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: /opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/QIcon
+qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: /opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/QTextCursor
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: /opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qabstracttextdocumentlayout.h
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: /opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qbrush.h
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: /opt/Qt5.12.8/5.12.8/gcc_64/include/QtGui/qcolor.h

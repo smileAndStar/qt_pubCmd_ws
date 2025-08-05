@@ -1,64 +1,92 @@
 #include "qt_cmd_vel/widhealthmnt.h"
 #include "ui_widhealthmnt.h"
+#include <QTextCursor>
+#include <QMetaObject>
 
 widhealthMnt::widhealthMnt(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::widhealthMnt)
+    ui(new Ui::widhealthMnt),
+    monitor(new HealthMonitor(DEVICE_PORT))
 {
     ui->setupUi(this);
-
-    // 开始采集数据
-    HealthMonitor monitor(DEVICE_PORT);
-    global_monitor = &monitor;
-
-    if(!monitor.connect()){
-        global_monitor = nullptr;
-        ui->plainTextEdit->appendPlainText("无法连接到健康监测模块，请检查连接");
-    }
-
-    //lambda 回调函数，处理接收到的数据
-    // 捕获列表 [&] 表示以引用的方式访问外部作用域中的所有变量
-    monitor.startCollection([&](const realtime_packet_t& data){
-        if(!keep_running.load()) return; // 如果不再采集，直接返回
-
-        // 处理接收到的数据
-
-        // 将数据格式化为字符串
-        outputText += "========================================\n";
-        outputText += QString("User Detected: %1\n").arg(is_user_detected(data.state) ? "Yes" : "No");
-        outputText += QString("Heart Rate:    %1 bpm\n").arg(data.heartrate);
-        outputText += QString("SpO2:          %1 %\n").arg(data.spo2);
-        outputText += QString("SDNN:          %1\n").arg(data.sdnn);
-        outputText += QString("Fatigue:       %1\n").arg(get_fatigue_status(data.sdnn));
-        // 处理 RR 间期数据
-        auto rr_points = monitor.getRRScatterPoints(data);
-        if(!rr_points.empty()){
-            outputText += "RR Points:\n";
-            for(const auto& rr : rr_points){
-                outputText += QString("(%1,%2) ").arg(rr.first).arg(rr.second);
+    
+    // 连接信号和槽（用于线程安全的UI更新）
+    connect(this, &widhealthMnt::displayUpdate, this, &widhealthMnt::updateDisplay, Qt::QueuedConnection);
+    
+    ui->plainTextEdit->appendPlainText("正在连接健康监测模块...");
+    
+    try {
+        // 尝试连接设备
+        if (!monitor->connect()) {
+            ui->plainTextEdit->appendPlainText("无法连接到健康监测模块，请检查连接");
+            return;
+        }
+        
+        ui->plainTextEdit->appendPlainText("连接成功，开始采集数据...");
+        
+        // 启动数据采集，使用 lambda 回调（类似示例程序）
+        monitor->startCollection([this](const realtime_packet_t& data) {
+            if (!keep_running.load()) return; // 如果停止标志被设置，直接返回
+            
+            // 格式化数据
+            QString newData;
+            newData += "========================================\n";
+            newData += QString("User Detected: %1\n").arg(is_user_detected(data.state) ? "Yes" : "No");
+            newData += QString("Heart Rate:    %1 bpm\n").arg(data.heartrate);
+            newData += QString("SpO2:          %1 %%\n").arg(data.spo2);
+            newData += QString("SDNN:          %1\n").arg(data.sdnn);
+            newData += QString("Fatigue:       %1\n").arg(get_fatigue_status(data.sdnn));
+            
+            // 处理 RR 间期数据
+            auto rr_points = monitor->getRRScatterPoints(data);
+            if (!rr_points.empty()) {
+                newData += "RR Points:     ";
+                for (const auto& p : rr_points) {
+                    newData += QString("(%1,%2) ").arg(p.first).arg(p.second);
+                }
+                newData += "\n";
             }
-            outputText += "\n";
-        }   
-
-        // 使用 setPlainText() 方法刷新 QplainTextEdit 的内容
-        // 该方法会清除旧内容并显示新内容。
-        ui->plainTextEdit->setPlainText(outputText);
-    });
-
+            
+            // 通过信号更新UI（线程安全）
+            emit displayUpdate(newData);
+        });
+        
+    } catch (const std::exception& e) {
+        ui->plainTextEdit->appendPlainText(QString("连接异常: %1").arg(e.what()));
+    }
 }
 
 widhealthMnt::~widhealthMnt()
 {
+    keep_running.store(false); // 设置停止标志
+    
+    // 按照示例程序的方式安全地停止和断开
+    if (monitor) {
+        try {
+            monitor->stopCollection();
+            monitor->disconnect();
+            delete monitor; // 手动删除对象
+            monitor = nullptr;
+        } catch (const std::exception& e) {
+            // 忽略析构时的异常
+        }
+    }
+    
     delete ui;
-
-    // 停止数据采集,释放资源
-    global_monitor->stopCollection();
-    global_monitor->disconnect();
-    global_monitor = nullptr;
 }
 
 void widhealthMnt::on_BtnBack2_clicked()
 {
-    keep_running.store(false); // 停止采集数据
-    this->close();
+    keep_running.store(false); // 设置停止标志
+    this->close(); // 关闭对话框，析构函数会处理资源清理
+}
+
+void widhealthMnt::updateDisplay(QString text)
+{
+    // 在主线程中更新UI
+    outputText += text;
+    ui->plainTextEdit->setPlainText(outputText);
+    
+    // 自动滚动到底部
+    ui->plainTextEdit->moveCursor(QTextCursor::End);
 }
