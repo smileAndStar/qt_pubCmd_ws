@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/smile/ros_ws/qt_cmd_vel_ws/devel/setup.sh

@@ -4,6 +4,7 @@
 #include "qt_cmd_vel/worker.h"
 #include <QThread>
 #include "qt_cmd_vel/widrocker.h"
+#include "qt_cmd_vel/widhealthmnt.h"
 
 Widget::Widget(ros::NodeHandle &nh, QWidget *parent)
     : QWidget(parent)
@@ -27,6 +28,8 @@ Widget::Widget(ros::NodeHandle &nh, QWidget *parent)
     // 创建按键控制器实例
     btn_controller = new BtnController(nh);
 
+    //////////////////////////////////////////////////////////////////////////////////////////
+    // 此线程负责发布ros消息
     // 创建并启动工作线程
     QThread * thread = new QThread();
     Worker * worker = new Worker(btn_controller);
@@ -34,10 +37,8 @@ Widget::Widget(ros::NodeHandle &nh, QWidget *parent)
     
     // 当线程启动时，开始执行 process() 循环
     connect(thread, &QThread::started, worker, &Worker::process);
-
     // 当 worker 发出 finished 信号时，停止线程
     connect(worker, &Worker::finished, thread, &QThread::quit);
-
     // 当线程结束时，删除 worker 对象
     connect(thread, &QThread::finished, worker, &QObject::deleteLater);
     // 当线程结束时，删除线程对象
@@ -45,6 +46,7 @@ Widget::Widget(ros::NodeHandle &nh, QWidget *parent)
 
     // 线程，启动!
     thread->start();
+    //////////////////////////////////////////////////////////////////////////////////////////
 }
 
 Widget::~Widget()
@@ -99,4 +101,15 @@ void Widget::on_BtnRocker_clicked()
     rocker->show();
     rocker->exec();             //阻塞程序直到对话框关闭
     delete rocker;
+}
+
+//健康检测界面
+void Widget::on_BtnHealth_clicked()
+{
+    btn_controller->stopMovement();     //先停止运动
+    widhealthMnt *health = new widhealthMnt(this);
+    health->setModal(true);
+    health->show();
+    health->exec();
+    delete health;
 }

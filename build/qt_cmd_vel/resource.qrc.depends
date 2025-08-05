@@ -10,5 +10,6 @@
         <file>images/circle.png</file>
         <file>images/backward.png</file>
         <file>images/back.png</file>
+        <file>images/medicine.png</file>
     </qresource>
 </RCC>

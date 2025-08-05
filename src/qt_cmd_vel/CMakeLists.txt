@@ -26,6 +26,7 @@ set(QT_MOC_HDRS
   include/qt_cmd_vel/widget.h
   include/qt_cmd_vel/worker.h
   include/qt_cmd_vel/widrocker.h
+  include/qt_cmd_vel/widhealthmnt.h
 )
 ################################################################################################
 
@@ -163,6 +164,7 @@ catkin_package(
 # "include" 是我们自己的头文件目录
 include_directories(
   include
+  ${CMAKE_CURRENT_SOURCE_DIR}/bin/include
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -197,6 +199,11 @@ add_executable(${PROJECT_NAME}_node
 ## same as for the library above
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
+# 自定义链接库路径
+target_link_directories(${PROJECT_NAME}_node PRIVATE
+  ${CMAKE_CURRENT_SOURCE_DIR}/bin/lib
+)
+
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
@@ -205,6 +212,8 @@ add_executable(${PROJECT_NAME}_node
 target_link_libraries(${PROJECT_NAME}_node
   ${catkin_LIBRARIES}
   Qt5::Widgets
+  health_monitor_cpp  # cpp库依赖于c库，因此要先链接cpp库再链接c库
+  health_monitor_c
 )
 
 #############

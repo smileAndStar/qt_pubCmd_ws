@@ -74,6 +74,12 @@ private slots:
      */
     void on_BtnRocker_clicked();
 
+    /**
+     * @brief 处理健康检测按钮点击事件。
+     * 当用户点击健康检测按钮时，打开健康检测窗口。
+     */
+    void on_BtnHealth_clicked();
+
 private:
     Ui::Widget *ui;
     BtnController *btn_controller;

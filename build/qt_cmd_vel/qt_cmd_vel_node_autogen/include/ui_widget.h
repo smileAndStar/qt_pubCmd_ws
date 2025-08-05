@@ -52,6 +52,7 @@ public:
     QSlider *AngulSpeed;
     QSpacerItem *verticalSpacer_5;
     QPushButton *BtnRocker;
+    QPushButton *BtnHealth;
 
     void setupUi(QWidget *Widget)
     {
@@ -219,6 +220,13 @@ public:
         icon5.addFile(QString::fromUtf8(":/images/Joystick.png"), QSize(), QIcon::Normal, QIcon::Off);
         BtnRocker->setIcon(icon5);
         BtnRocker->setIconSize(QSize(51, 51));
+        BtnHealth = new QPushButton(Widget);
+        BtnHealth->setObjectName(QString::fromUtf8("BtnHealth"));
+        BtnHealth->setGeometry(QRect(1180, 120, 81, 61));
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/images/medicine.png"), QSize(), QIcon::Normal, QIcon::Off);
+        BtnHealth->setIcon(icon6);
+        BtnHealth->setIconSize(QSize(60, 60));
 
         retranslateUi(Widget);
 
@@ -236,6 +244,7 @@ public:
         label->setText(QApplication::translate("Widget", "\347\272\277\351\200\237\345\272\246", nullptr));
         label_2->setText(QApplication::translate("Widget", "\350\247\222\351\200\237\345\272\246", nullptr));
         BtnRocker->setText(QString());
+        BtnHealth->setText(QString());
     } // retranslateUi
 
 };

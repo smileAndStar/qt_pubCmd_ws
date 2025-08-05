@@ -67,6 +67,7 @@ qt_cmd_vel/qrc_resource.cpp: /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/ima
 qt_cmd_vel/qrc_resource.cpp: /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/images/circle.png
 qt_cmd_vel/qrc_resource.cpp: /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/images/backward.png
 qt_cmd_vel/qrc_resource.cpp: /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/images/back.png
+qt_cmd_vel/qrc_resource.cpp: /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/images/medicine.png
 qt_cmd_vel/qrc_resource.cpp: qt_cmd_vel/resource.qrc.depends
 qt_cmd_vel/qrc_resource.cpp: /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/resource.qrc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating qrc_resource.cpp"
@@ -84,9 +85,13 @@ qt_cmd_vel/include/qt_cmd_vel/moc_widrocker.cpp: /home/smile/ros_ws/qt_cmd_vel_w
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating include/qt_cmd_vel/moc_widrocker.cpp"
 	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/include/qt_cmd_vel && /opt/Qt5.12.8/5.12.8/gcc_64/bin/moc @/home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/include/qt_cmd_vel/moc_widrocker.cpp_parameters
 
+qt_cmd_vel/include/qt_cmd_vel/moc_widhealthmnt.cpp: /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/include/qt_cmd_vel/widhealthmnt.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating include/qt_cmd_vel/moc_widhealthmnt.cpp"
+	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/include/qt_cmd_vel && /opt/Qt5.12.8/5.12.8/gcc_64/bin/moc @/home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/include/qt_cmd_vel/moc_widhealthmnt.cpp_parameters
+
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/BtnControl.cpp.o: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/flags.make
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/BtnControl.cpp.o: /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/BtnControl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/BtnControl.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/BtnControl.cpp.o"
 	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qt_cmd_vel_node.dir/src/BtnControl.cpp.o -c /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/BtnControl.cpp
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/BtnControl.cpp.i: cmake_force
@@ -99,7 +104,7 @@ qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/BtnControl.cpp.s: cmake_force
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/CmdPub.cpp.o: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/flags.make
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/CmdPub.cpp.o: /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/CmdPub.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/CmdPub.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/CmdPub.cpp.o"
 	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qt_cmd_vel_node.dir/src/CmdPub.cpp.o -c /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/CmdPub.cpp
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/CmdPub.cpp.i: cmake_force
@@ -112,7 +117,7 @@ qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/CmdPub.cpp.s: cmake_force
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/main.cpp.o: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/flags.make
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/main.cpp.o: /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/main.cpp.o"
 	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qt_cmd_vel_node.dir/src/main.cpp.o -c /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/main.cpp
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/main.cpp.i: cmake_force
@@ -125,7 +130,7 @@ qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/main.cpp.s: cmake_force
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widget.cpp.o: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/flags.make
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widget.cpp.o: /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/widget.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widget.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widget.cpp.o"
 	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qt_cmd_vel_node.dir/src/widget.cpp.o -c /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/widget.cpp
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widget.cpp.i: cmake_force
@@ -136,9 +141,22 @@ qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/qt_cmd_vel_node.dir/src/widget.cpp.s"
 	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/widget.cpp -o CMakeFiles/qt_cmd_vel_node.dir/src/widget.cpp.s
 
+qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/flags.make
+qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o: /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/widhealthmnt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o"
+	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o -c /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/widhealthmnt.cpp
+
+qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.i"
+	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/widhealthmnt.cpp > CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.i
+
+qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.s"
+	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/widhealthmnt.cpp -o CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.s
+
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widrocker.cpp.o: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/flags.make
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widrocker.cpp.o: /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/widrocker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widrocker.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widrocker.cpp.o"
 	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qt_cmd_vel_node.dir/src/widrocker.cpp.o -c /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/widrocker.cpp
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widrocker.cpp.i: cmake_force
@@ -151,7 +169,7 @@ qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widrocker.cpp.s: cmake_force
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/worker.cpp.o: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/flags.make
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/worker.cpp.o: /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/worker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/worker.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/worker.cpp.o"
 	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qt_cmd_vel_node.dir/src/worker.cpp.o -c /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/src/worker.cpp
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/worker.cpp.i: cmake_force
@@ -164,7 +182,7 @@ qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/worker.cpp.s: cmake_force
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/qrc_resource.cpp.o: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/flags.make
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/qrc_resource.cpp.o: qt_cmd_vel/qrc_resource.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/qrc_resource.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/qrc_resource.cpp.o"
 	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qt_cmd_vel_node.dir/qrc_resource.cpp.o -c /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/qrc_resource.cpp
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/qrc_resource.cpp.i: cmake_force
@@ -177,7 +195,7 @@ qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/qrc_resource.cpp.s: cmake_force
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widget.cpp.o: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/flags.make
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widget.cpp.o: qt_cmd_vel/include/qt_cmd_vel/moc_widget.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widget.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widget.cpp.o"
 	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widget.cpp.o -c /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/include/qt_cmd_vel/moc_widget.cpp
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widget.cpp.i: cmake_force
@@ -190,7 +208,7 @@ qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widget.cpp.s: c
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_worker.cpp.o: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/flags.make
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_worker.cpp.o: qt_cmd_vel/include/qt_cmd_vel/moc_worker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_worker.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_worker.cpp.o"
 	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_worker.cpp.o -c /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/include/qt_cmd_vel/moc_worker.cpp
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_worker.cpp.i: cmake_force
@@ -203,7 +221,7 @@ qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_worker.cpp.s: c
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widrocker.cpp.o: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/flags.make
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widrocker.cpp.o: qt_cmd_vel/include/qt_cmd_vel/moc_widrocker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widrocker.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widrocker.cpp.o"
 	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widrocker.cpp.o -c /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/include/qt_cmd_vel/moc_widrocker.cpp
 
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widrocker.cpp.i: cmake_force
@@ -214,18 +232,33 @@ qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widrocker.cpp.s
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widrocker.cpp.s"
 	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/include/qt_cmd_vel/moc_widrocker.cpp -o CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widrocker.cpp.s
 
+qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widhealthmnt.cpp.o: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/flags.make
+qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widhealthmnt.cpp.o: qt_cmd_vel/include/qt_cmd_vel/moc_widhealthmnt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widhealthmnt.cpp.o"
+	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widhealthmnt.cpp.o -c /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/include/qt_cmd_vel/moc_widhealthmnt.cpp
+
+qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widhealthmnt.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widhealthmnt.cpp.i"
+	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/include/qt_cmd_vel/moc_widhealthmnt.cpp > CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widhealthmnt.cpp.i
+
+qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widhealthmnt.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widhealthmnt.cpp.s"
+	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/include/qt_cmd_vel/moc_widhealthmnt.cpp -o CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widhealthmnt.cpp.s
+
 # Object files for target qt_cmd_vel_node
 qt_cmd_vel_node_OBJECTS = \
 "CMakeFiles/qt_cmd_vel_node.dir/src/BtnControl.cpp.o" \
 "CMakeFiles/qt_cmd_vel_node.dir/src/CmdPub.cpp.o" \
 "CMakeFiles/qt_cmd_vel_node.dir/src/main.cpp.o" \
 "CMakeFiles/qt_cmd_vel_node.dir/src/widget.cpp.o" \
+"CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o" \
 "CMakeFiles/qt_cmd_vel_node.dir/src/widrocker.cpp.o" \
 "CMakeFiles/qt_cmd_vel_node.dir/src/worker.cpp.o" \
 "CMakeFiles/qt_cmd_vel_node.dir/qrc_resource.cpp.o" \
 "CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widget.cpp.o" \
 "CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_worker.cpp.o" \
-"CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widrocker.cpp.o"
+"CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widrocker.cpp.o" \
+"CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widhealthmnt.cpp.o"
 
 # External object files for target qt_cmd_vel_node
 qt_cmd_vel_node_EXTERNAL_OBJECTS =
@@ -234,12 +267,14 @@ qt_cmd_vel_node_EXTERNAL_OBJECTS =
 /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/CmdPub.cpp.o
 /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/main.cpp.o
 /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widget.cpp.o
+/home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widhealthmnt.cpp.o
 /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/widrocker.cpp.o
 /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/src/worker.cpp.o
 /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/qrc_resource.cpp.o
 /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widget.cpp.o
 /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_worker.cpp.o
 /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widrocker.cpp.o
+/home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/include/qt_cmd_vel/moc_widhealthmnt.cpp.o
 /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/build.make
 /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node: /opt/ros/noetic/lib/libroscpp.so
 /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node: /usr/lib/x86_64-linux-gnu/libpthread.so
@@ -262,7 +297,7 @@ qt_cmd_vel_node_EXTERNAL_OBJECTS =
 /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node: /opt/Qt5.12.8/5.12.8/gcc_64/lib/libQt5Gui.so.5.12.8
 /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node: /opt/Qt5.12.8/5.12.8/gcc_64/lib/libQt5Core.so.5.12.8
 /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node: qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/smile/ros_ws/qt_cmd_vel_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib/qt_cmd_vel/qt_cmd_vel_node"
 	cd /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/qt_cmd_vel_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -278,6 +313,7 @@ qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/depend: qt_cmd_vel/qrc_resource.cpp
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/depend: qt_cmd_vel/include/qt_cmd_vel/moc_widget.cpp
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/depend: qt_cmd_vel/include/qt_cmd_vel/moc_worker.cpp
 qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/depend: qt_cmd_vel/include/qt_cmd_vel/moc_widrocker.cpp
+qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/depend: qt_cmd_vel/include/qt_cmd_vel/moc_widhealthmnt.cpp
 	cd /home/smile/ros_ws/qt_cmd_vel_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/smile/ros_ws/qt_cmd_vel_ws/src /home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel /home/smile/ros_ws/qt_cmd_vel_ws/build /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel /home/smile/ros_ws/qt_cmd_vel_ws/build/qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : qt_cmd_vel/CMakeFiles/qt_cmd_vel_node.dir/depend
 
