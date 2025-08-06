@@ -42,6 +42,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
   geometry_msgs
+  message_generation  # 自定义消息需要添加这个
 )
 
 find_package(Qt5 REQUIRED COMPONENTS
@@ -90,12 +91,11 @@ qt5_wrap_cpp(QT_MOC_SRCS ${QT_MOC_HDRS})
 ##   * uncomment the generate_messages entry below
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
-## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+# Generate messages in the 'msg' folder
+add_message_files(
+  FILES
+  personData.msg
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -111,11 +111,11 @@ qt5_wrap_cpp(QT_MOC_SRCS ${QT_MOC_HDRS})
 #   Action2.action
 # )
 
-## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+# Generate added messages and services with any dependencies listed here
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##

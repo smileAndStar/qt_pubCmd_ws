@@ -35,6 +35,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "qt_cmd_vel"
   "/home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel"
   "qt_cmd_vel/qt_cmd_vel_node_autogen/include"
+  "/home/smile/ros_ws/qt_cmd_vel_ws/devel/include"
   "/home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/include"
   "/home/smile/ros_ws/qt_cmd_vel_ws/src/qt_cmd_vel/bin/include"
   "/opt/ros/noetic/include"

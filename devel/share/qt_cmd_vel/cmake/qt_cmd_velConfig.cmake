@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(qt_cmd_vel_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT " " STREQUAL " ")
+if(NOT "/home/smile/ros_ws/qt_cmd_vel_ws/devel/include " STREQUAL " ")
   set(qt_cmd_vel_INCLUDE_DIRS "")
-  set(_include_dirs "")
+  set(_include_dirs "/home/smile/ros_ws/qt_cmd_vel_ws/devel/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -156,7 +156,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib;/home/smile/ros_ws/qt_cmd_vel_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/smile/ros_ws/qt_cmd_vel_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -179,7 +179,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(qt_cmd_vel_EXPORTED_TARGETS "")
+set(qt_cmd_vel_EXPORTED_TARGETS "qt_cmd_vel_generate_messages_cpp;qt_cmd_vel_generate_messages_eus;qt_cmd_vel_generate_messages_lisp;qt_cmd_vel_generate_messages_nodejs;qt_cmd_vel_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${qt_cmd_vel_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -216,7 +216,7 @@ foreach(depend ${depends})
   _list_append_deduplicate(qt_cmd_vel_EXPORTED_TARGETS ${${qt_cmd_vel_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "")
+set(pkg_cfg_extras "qt_cmd_vel-msg-extras.cmake")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${qt_cmd_vel_DIR}/${extra})

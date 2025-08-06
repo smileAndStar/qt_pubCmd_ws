@@ -8,6 +8,7 @@
 
 Widget::Widget(ros::NodeHandle &nh, QWidget *parent)
     : QWidget(parent)
+    , nh_(nh)
     , ui(new Ui::Widget)
 {
     // 这个函数负责创建和布局你在 Designer 中设计的所有控件。
@@ -26,7 +27,7 @@ Widget::Widget(ros::NodeHandle &nh, QWidget *parent)
     this->setWindowTitle("底盘控制器");
 
     // 创建按键控制器实例
-    btn_controller = new BtnController(nh);
+    btn_controller = new BtnController(nh_);
 
     //////////////////////////////////////////////////////////////////////////////////////////
     // 此线程负责发布ros消息
@@ -107,7 +108,7 @@ void Widget::on_BtnRocker_clicked()
 void Widget::on_BtnHealth_clicked()
 {
     btn_controller->stopMovement();     //先停止运动
-    widhealthMnt *health = new widhealthMnt(this);
+    widhealthMnt *health = new widhealthMnt(nh_, this);
     health->setModal(true);
     health->show();
     health->exec();

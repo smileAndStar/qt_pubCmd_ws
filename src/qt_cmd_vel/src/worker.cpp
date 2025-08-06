@@ -11,7 +11,7 @@ Worker::~Worker() {
 
 void Worker::process()
 {
-    ros::Rate loop_rate(5); // 设定10Hz频率
+    ros::Rate loop_rate(5); // 设定5Hz频率
 
     while (ros::ok() && is_running_)
     {

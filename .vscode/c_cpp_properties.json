@@ -9,7 +9,8 @@
         "/opt/ros/noetic/include/**",
         "/usr/include/**",
         "${workspaceFolder}/src/qt_cmd_vel/include/",
-        "${workspaceFolder}/src/qt_cmd_vel/bin/include/"
+        "${workspaceFolder}/src/qt_cmd_vel/bin/include/",
+        "${workspaceFolder}/devel/include/**"
       ],
       "name": "ROS",
       "intelliSenseMode": "gcc-x64",

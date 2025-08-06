@@ -82,6 +82,7 @@ private slots:
 
 private:
     Ui::Widget *ui;
+    ros::NodeHandle nh_; // ROS节点句柄，用于与ROS系统交互
     BtnController *btn_controller;
 };
 #endif // WIDGET_H
