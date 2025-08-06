@@ -1,8 +1,0 @@
-prefix=/home/smile/ros_ws/qt_cmd_vel_ws/devel
-
-Name: qt_cmd_vel
-Description: Description of qt_cmd_vel
-Version: 0.0.0
-Cflags: -I/home/smile/ros_ws/qt_cmd_vel_ws/devel/include
-Libs: -L${prefix}/lib 
-Requires: 

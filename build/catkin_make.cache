@@ -1,2 +1,0 @@
-qt_cmd_vel
--DCATKIN_DEVEL_PREFIX=/home/smile/ros_ws/qt_cmd_vel_ws/devel -DCMAKE_INSTALL_PREFIX=/home/smile/ros_ws/qt_cmd_vel_ws/install -G Unix Makefiles
