@@ -18,7 +18,9 @@ set(CMAKE_AUTORCC off)  # Qt5 的 RCC 处理需要手动指定
 
 # Qt的资源文件（.qrc）需要手动指定
 # 指定 .qrc 的相对路径
-set(RES_QRC resource.qrc)
+set(RES_QRC 
+  resource.qrc
+)
 
 # Qt的 CMAKE_AUTOMOC 不起作用，手动添加 MOC 处理
 # 定义一个变量，存放所有需要 MOC 处理的头文件

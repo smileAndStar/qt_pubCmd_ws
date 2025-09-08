@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/main_about.png</file>
+        <file>image/main_company.png</file>
+        <file>image/main_config.png</file>
+        <file>image/main_data.png</file>
+        <file>image/main_exit.png</file>
+        <file>image/main_help.png</file>
+        <file>image/main_main.png</file>
+        <file>image/main_person.png</file>
+        <file>image/stop.png</file>
+        <file>image/ring.png</file>
+        <file>image/right.png</file>
+        <file>image/medicine.png</file>
+        <file>image/left.png</file>
+        <file>image/Joystick.png</file>
+        <file>image/forward.png</file>
+        <file>image/circle.png</file>
+        <file>image/backward.png</file>
+        <file>image/back.png</file>
+    </qresource>
+</RCC>
