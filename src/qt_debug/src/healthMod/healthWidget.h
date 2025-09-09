@@ -26,14 +26,20 @@ public:
     ~healthMnter();
 
 protected:
+    /**
+     * @brief 事件过滤器，用于捕获特定事件
+     * @param obj 事件目标对象
+     * @param event 事件对象
+     * @return 是否处理该事件
+     */
     bool eventFilter(QObject *obj, QEvent *event) override;
 
 private slots:
     void onStartClicked();                     // 开始采集按钮点击
     void updateStatusDisplay(QString text);    // 更新状态信息显示（labelState）
-    void updateDebugDisplay(QString text);     // 更新调试信息显示（新增：专门的调试信息显示控件）
-    void updateHeartRateChart(QVector<QPointF> points); // 更新心率图表
-    void updateHealthData(QString healthInfo); // 更新健康数据显示
+    void updateDebugDisplay(QString text);     // 更新调试信息显示（保留）
+    void updateHeartRateChart(QVector<QPointF> points); // 更新心率图表（acPaintWidget）
+    void updateHealthData(QString healthInfo); // 更新健康数据显示（labelHealthMsg）
 
 signals:
     void statusUpdate(QString text);           // 状态信息更新信号（labelState使用）

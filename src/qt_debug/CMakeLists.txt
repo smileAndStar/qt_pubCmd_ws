@@ -97,8 +97,6 @@ catkin_package(
 
 # --- 创建可执行文件 ---
 add_executable(${PROJECT_NAME}_node
-  # 静态库文件
-  ${CMAKE_CURRENT_SOURCE_DIR}/bin/include
 
   # qt 文件
   ${HELPER_SOURCES}
@@ -122,6 +120,8 @@ include_directories(
   "${CMAKE_CURRENT_SOURCE_DIR}/src/common"      # common页面头文件路径
   "${CMAKE_CURRENT_SOURCE_DIR}/src/form"        # qt主界面头文件路径
   "${CMAKE_CURRENT_SOURCE_DIR}/src/rocker"      # rocker绘制头文件路径
+
+  # 后端服务头文件
   "${CMAKE_CURRENT_SOURCE_DIR}/src/healthMod"   # 健康监测模块头文件路径
   "${CMAKE_CURRENT_SOURCE_DIR}/bin/include"     # 外部库头文件路径
 )
