@@ -1000,7 +1000,7 @@
                </font>
               </property>
               <property name="text">
-               <string>生理参数检测模块</string>
+               <string>生理参数检测</string>
               </property>
              </widget>
             </item>
@@ -1095,29 +1095,16 @@ QPushButton:!checked {
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_9">
             <item>
-             <spacer name="horizontalSpacer_12">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
              <widget class="QLabel" name="label_state">
               <property name="minimumSize">
                <size>
-                <width>240</width>
+                <width>260</width>
                 <height>130</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>240</width>
+                <width>260</width>
                 <height>130</height>
                </size>
               </property>
@@ -1146,13 +1133,13 @@ QPushButton:!checked {
              <widget class="QWidget" name="acPaintWidget" native="true">
               <property name="minimumSize">
                <size>
-                <width>420</width>
+                <width>460</width>
                 <height>130</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>420</width>
+                <width>460</width>
                 <height>130</height>
                </size>
               </property>
@@ -1178,7 +1165,7 @@ QPushButton:!checked {
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>260</height>
+              <height>285</height>
              </size>
             </property>
             <property name="text">
@@ -1196,7 +1183,7 @@ QPushButton:!checked {
        <item>
         <widget class="QLabel" name="lab4">
          <property name="text">
-          <string>保留界面</string>
+          <string>......</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>

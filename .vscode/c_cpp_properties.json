@@ -10,7 +10,9 @@
         "/usr/include/**",
         "${workspaceFolder}/src/qt_cmd_vel/include/",
         "${workspaceFolder}/src/qt_cmd_vel/bin/include/",
-        "${workspaceFolder}/devel/include/**"
+        "${workspaceFolder}/devel/include/**",
+        "${workspaceFolder}/src/qt_debug/qtHelper/**",
+        "${workspaceFolder}/src/qt_debug/src/**"
       ],
       "name": "ROS",
       "intelliSenseMode": "gcc-x64",

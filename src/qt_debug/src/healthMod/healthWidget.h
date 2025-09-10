@@ -42,8 +42,8 @@ private slots:
     void updateHealthData(QString healthInfo); // 更新健康数据显示（labelHealthMsg）
 
 signals:
-    void statusUpdate(QString text);           // 状态信息更新信号（labelState使用）
-    void debugUpdate(QString text);           // 调试信息更新信号（新增）
+    void statusUpdate(QString text);          // 状态信息更新信号（labelState使用）
+    void debugUpdate(QString text);           // 调试信息更新信号（保留）
     void heartRateUpdate(QVector<QPointF> points); // 心率数据更新信号
     void healthDataUpdate(QString healthInfo); // 健康数据更新信号
 
@@ -66,8 +66,24 @@ private:
     QWidget* paintWidget;
     
     // 数据处理方法
+    /**
+     * @brief 处理接收到的健康数据包
+     * @param data 接收到的健康数据包
+     */
     void processHealthData(const realtime_packet_t& data);
+
+    /**
+     * @brief 绘制心率图表
+     * @param painter QPainter对象，用于绘图
+     * @param rect 绘图区域
+     */
     void drawHeartRateChart(QPainter& painter, const QRect& rect);
+
+    /**
+     * @brief 格式化健康数据为字符串
+     * @param data 健康数据包
+     * @return 格式化后的字符串
+     */
     QString formatHealthMessage(const realtime_packet_t& data);
 };
 

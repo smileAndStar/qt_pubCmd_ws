@@ -14,6 +14,7 @@
 
 #include <QWidget>
 #include <rocker/rockerwidget.h>
+#include <ros/ros.h>  // ROS头文件
 
 class QAbstractButton;  // 前向声明，避免包含整个头文件
 class healthMnter;      // 健康监测类前向声明
@@ -35,7 +36,8 @@ public:
      * @brief 构造函数
      * @param parent 父窗口指针，默认为nullptr
      */
-    explicit frmMain(QWidget *parent = 0);
+    // explicit frmMain(ros::NodeHandle &nh, QWidget *parent = nullptr);
+    explicit frmMain(QWidget *parent = nullptr);
     
     /**
      * @brief 析构函数
