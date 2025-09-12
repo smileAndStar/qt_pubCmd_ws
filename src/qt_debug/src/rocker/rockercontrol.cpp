@@ -1,8 +1,9 @@
 #include "rockercontrol.h"
 #include <QDebug>
 
-RockerControl::RockerControl(QWidget *parent)
-    : QWidget(parent), isMousePressed_(false)
+RockerControl::RockerControl(ros::NodeHandle &nh, QWidget *parent)
+    : nh_(nh),
+    QWidget(parent), isMousePressed_(false)
 {
     // 加载并缩放图片
     if (!bigCirclePixmap_.load(":/image/ring.png")) {
@@ -12,8 +13,18 @@ RockerControl::RockerControl(QWidget *parent)
         qWarning() << "错误：无法加载小圆图片资源 ':/image/circle.png'";
     }
 
+    // 创建ros控制器实例
+    rockerController_ = new Controller(nh_);
+
     // 设置鼠标跟踪，即使不按下鼠标也能捕获mousemove事件（如果需要的话）
     // setMouseTracking(true);
+}
+
+RockerControl::~RockerControl()
+{
+    // 析构时切换到停止状态
+    rockerController_->stopMovement();
+    delete rockerController_;
 }
 
 void RockerControl::resizeEvent(QResizeEvent *event)
@@ -31,9 +42,10 @@ void RockerControl::resizeEvent(QResizeEvent *event)
     if (!isMousePressed_) {
         smallCirclePos_ = centerPoint_;
     }
-    update();
+    update();   // 触发重绘
 }
 
+// 绘图事件
 void RockerControl::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
@@ -47,26 +59,30 @@ void RockerControl::paintEvent(QPaintEvent *event)
     painter.drawPixmap(smallCirclePos_.x() - smallCircleRadius_, smallCirclePos_.y() - smallCircleRadius_, smallCirclePixmap_);
 }
 
+// 鼠标按下事件
 void RockerControl::mousePressEvent(QMouseEvent *event)
 {
-    if (event->button() == Qt::LeftButton) {
+    if (event->button() == Qt::LeftButton) {    // 仅响应左键
+        // 检查点击位置是否在大圆内
         int distance = qSqrt(qPow(event->pos().x() - centerPoint_.x(), 2) + qPow(event->pos().y() - centerPoint_.y(), 2));
         if (distance <= bigCircleRadius_) {
             isMousePressed_ = true;
             calculateRockerPosition(event->pos());
-            update();
+            update();   // 触发重绘
         }
     }
 }
 
+// 鼠标移动事件
 void RockerControl::mouseMoveEvent(QMouseEvent *event)
 {
     if (isMousePressed_) {
         calculateRockerPosition(event->pos());
-        update();
+        update();       // 触发重绘
     }
 }
 
+// 鼠标释放事件
 void RockerControl::mouseReleaseEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton && isMousePressed_) {
@@ -75,13 +91,15 @@ void RockerControl::mouseReleaseEvent(QMouseEvent *event)
     }
 }
 
+// 公有槽函数，重置摇杆位置
 void RockerControl::resetRocker()
 {
     isMousePressed_ = false;
     smallCirclePos_ = centerPoint_;
-    update();
+    update();       // 触发重绘
 }
 
+// 计算摇杆位置并发射信号
 void RockerControl::calculateRockerPosition(const QPoint &mousePos)
 {
     smallCirclePos_ = mousePos;
@@ -96,6 +114,7 @@ void RockerControl::calculateRockerPosition(const QPoint &mousePos)
     emitRockerMovedSignal();
 }
 
+// 发射摇杆移动信号
 void RockerControl::emitRockerMovedSignal()
 {
     double maxDistance = bigCircleRadius_ - smallCircleRadius_;
@@ -108,5 +127,9 @@ void RockerControl::emitRockerMovedSignal()
     double normalizedX = dx / maxDistance;
     double normalizedY = dy / maxDistance;
 
-    emit rockerMoved(normalizedX, normalizedY);
+    // emit rockerMoved(normalizedX, normalizedY);
+
+    // 通过控制器发送命令
+    rockerController_->updateRockerState(normalizedX, normalizedY);
 }
+

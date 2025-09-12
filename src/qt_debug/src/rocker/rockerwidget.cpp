@@ -1,7 +1,8 @@
 #include "rockerwidget.h"
 #include <QDebug>
 
-RockerWidget::RockerWidget(QWidget *parent) :
+RockerWidget::RockerWidget(ros::NodeHandle &nh_, QWidget *parent) :
+    nh_(nh_),
     PageStateWidget(parent),
     rockerActive_(false)
 {
@@ -25,11 +26,6 @@ void RockerWidget::setupUI()
     titleLabel_->setAlignment(Qt::AlignCenter);
     titleLabel_->setStyleSheet("QLabel { font-size: 18px; font-weight: bold; margin: 10px; }");
 
-    // 使用自定义的 RockerControl
-    rockerControl_ = new RockerControl(this);
-    // 可以给它一个最小尺寸，或者让它自由伸缩
-    rockerControl_->setMinimumSize(300, 300);
-
     // 创建状态标签
     statusLabel_ = new QLabel("移动摇杆控制机器人方向", this);
     statusLabel_->setAlignment(Qt::AlignCenter);
@@ -37,7 +33,7 @@ void RockerWidget::setupUI()
 
     // 添加到主布局
     mainLayout_->addWidget(titleLabel_);
-    mainLayout_->addWidget(rockerControl_, 1);  // 摇杆区域占主要空间
+
     mainLayout_->addWidget(statusLabel_);
 
     // 设置布局边距
@@ -49,6 +45,14 @@ void RockerWidget::setupUI()
 void RockerWidget::onWidgetActivated()
 {
     rockerActive_ = true;
+
+    // 实例化自定义的 RockerControl
+    rockerControl_ = new RockerControl(nh_,this);
+    // 可以给它一个最小尺寸，或者让它自由伸缩
+    rockerControl_->setMinimumSize(300, 300);
+    // 添加到主布局
+    mainLayout_->addWidget(rockerControl_, 1);  // 摇杆区域占主要空间
+
     statusLabel_->setText("摇杆控制已激活");
     qDebug() << "RockerWidget: 摇杆控制激活";
 }
@@ -64,8 +68,15 @@ void RockerWidget::onWidgetDeactivated()
         rockerControl_->resetRocker();
         emit rockerReleased();
     }
+
+    // 删除 RockerControl 实例，释放资源
+    if (rockerControl_) {
+        mainLayout_->removeWidget(rockerControl_);
+        delete rockerControl_;
+        rockerControl_ = nullptr;
+    }
     
-    qDebug() << "RockerWidget: 摇杆控制停止";
+    qDebug() << "RockerWidget: 摇杆控制停止,释放资源";
 }
 
 // 重写基类虚函数：当特定页面状态改变时调用

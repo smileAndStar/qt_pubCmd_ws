@@ -55,6 +55,13 @@ file(GLOB HEALTH_SOURCES
   "src/healthMod/*.cpp"
 )
 
+file(GLOB CONTROL_SOURCES
+  "src/control/*.cpp"
+)
+
+file(GLOB BTNCONTROL_SOURCES
+  "src/btncontrol/*.cpp"
+)
 ################################################################################################
 
 ## Find catkin macros and libraries
@@ -108,6 +115,8 @@ add_executable(${PROJECT_NAME}_node
 
   # 后端文件
   ${HEALTH_SOURCES}
+  ${CONTROL_SOURCES}
+  ${BTNCONTROL_SOURCES}
 )
 
 # -- 添加头文件包含路径 --
@@ -124,6 +133,8 @@ include_directories(
   # 后端服务头文件
   "${CMAKE_CURRENT_SOURCE_DIR}/src/healthMod"   # 健康监测模块头文件路径
   "${CMAKE_CURRENT_SOURCE_DIR}/bin/include"     # 外部库头文件路径
+  "${CMAKE_CURRENT_SOURCE_DIR}/src/control"     # 控制模块头文件路径
+  "${CMAKE_CURRENT_SOURCE_DIR}/src/btncontrol"  # 按钮控制模块头文件路径
 )
 
 # -- 添加链接库搜素路径 --

@@ -36,8 +36,8 @@ public:
      * @brief 构造函数
      * @param parent 父窗口指针，默认为nullptr
      */
-    // explicit frmMain(ros::NodeHandle &nh, QWidget *parent = nullptr);
-    explicit frmMain(QWidget *parent = nullptr);
+    // explicit frmMain(QWidget *parent = nullptr);
+    explicit frmMain(ros::NodeHandle &nh, QWidget *parent = nullptr);
     
     /**
      * @brief 析构函数
@@ -69,6 +69,9 @@ private:
     // 左侧配置菜单相关数据
     QList<int> iconsConfig;               // 配置菜单图标编码列表
     QList<QAbstractButton *> btnsConfig; // 配置菜单按钮对象列表
+
+    // ROS节点句柄
+    ros::NodeHandle nh_;
 
 private:
     //样式表颜色配置成员变量

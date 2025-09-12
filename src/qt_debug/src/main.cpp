@@ -5,14 +5,14 @@
 
 int main(int argc, char *argv[])
 {
-    // // 中文
-    // setlocale(LC_ALL, "");
-    // // 初始化 ROS 节点
-    // ros::init(argc, argv, "qt_cmd_vel_node");
-    // // 创建 ROS 节点句柄
-    // ros::NodeHandle nh;
-    // // 延时确保节点初始化完成
-    // ros::Duration(0.1).sleep();
+    // 中文
+    setlocale(LC_ALL, "");
+    // 初始化 ROS 节点
+    ros::init(argc, argv, "qt_cmd_vel_node");
+    // 创建 ROS 节点句柄
+    ros::NodeHandle nh;
+    // 延时确保节点初始化完成
+    ros::Duration(0.1).sleep();
 
     // 创建 QT 界面实例
     QtHelper::initMain();
@@ -22,8 +22,8 @@ int main(int argc, char *argv[])
     QtHelper::setCode();
 
     // 主窗体
-    // frmMain w(nh);  // 传入 ROS 节点句柄
-    frmMain w;
+    // frmMain w;
+    frmMain w(nh);  // 传入 ROS 节点句柄
     QtHelper::setFormInCenter(&w);
     w.show();
     return a.exec();    // exec() 进入 Qt 事件循环

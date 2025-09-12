@@ -3,15 +3,27 @@
 
 #include <QLabel>
 #include <QVBoxLayout>
-#include "../common/page_state_widget.h"
+#include "page_state_widget.h"
 #include "rockercontrol.h"
+#include <ros/ros.h>
 
+/**
+ * @class RockerWidget
+ * @brief 摇杆界面管理器 (在frmman.ui主窗口中没有创建实例，手动创建)
+ * 这个类的主要作用是创建和管理整个摇杆控制界面的布局
+ * 继承自 PageStateWidget，支持多页面状态检测，
+ * 当所有监控的页面都不是当前页面时，会自动停止业务逻辑。
+ */
 class RockerWidget : public PageStateWidget
 {
     Q_OBJECT
 
 public:
-    explicit RockerWidget(QWidget *parent = nullptr);
+    /**
+     * @brief 构造函数
+     * @param parent 父窗口指针，默认为nullptr
+     */
+    explicit RockerWidget(ros::NodeHandle &nh_, QWidget *parent = nullptr);
     ~RockerWidget();
 
 signals:
@@ -30,8 +42,21 @@ signals:
 
 protected:
     // 重写基类虚函数
+    /**
+     * @brief 当组件变为活跃状态时调用（有页面变为当前页面）
+     * 子类重写此方法来启动业务逻辑
+     */
     void onWidgetActivated() override;
+
+    /**
+     * @brief 当组件变为非活跃状态时调用（所有页面都不是当前页面）
+     * 子类重写此方法来停止业务逻辑
+     */
     void onWidgetDeactivated() override;
+
+    /**
+     * @brief 当特定页面状态改变时调用
+     */
     void onPageStateChanged(const QString& pageId, bool isActive) override;
 
 private slots:
@@ -49,6 +74,9 @@ private:
     
     // 状态管理
     bool rockerActive_;
+
+    // ros 节点句柄
+    ros::NodeHandle nh_;
 };
 
 #endif // ROCKERWIDGET_H

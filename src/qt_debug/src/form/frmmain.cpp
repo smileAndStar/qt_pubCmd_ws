@@ -53,7 +53,10 @@
  *          4. initLeftMain() - 初始化左侧主菜单按钮
  *          5. initLeftConfig() - 初始化左侧配置菜单按钮
  */
-frmMain::frmMain(QWidget *parent) : QWidget(parent), ui(new Ui::frmMain)
+frmMain::frmMain(ros::NodeHandle &nh, QWidget *parent) : 
+QWidget(parent), 
+ui(new Ui::frmMain),
+nh_(nh)
 {
     ui->setupUi(this);      // 初始化UI界面，创建所有控件
     this->initForm();       // 初始化窗口基本设置
@@ -313,7 +316,7 @@ void frmMain::initLeftMain()
     IconHelper::setStyle(ui->widgetLeftMain, btnsMain, iconsMain, styleColor);
 
     // 创建摇杆页面
-    rockerWidget_ = new RockerWidget(this);
+    rockerWidget_ = new RockerWidget(nh_,this);
     // 先添加到 StackedWidget（成为索引1）
     ui->stackedWidget_main->addWidget(rockerWidget_);
     // 然后添加页面状态监控

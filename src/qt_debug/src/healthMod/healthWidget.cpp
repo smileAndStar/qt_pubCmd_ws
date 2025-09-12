@@ -36,7 +36,7 @@ healthMnter::healthMnter(PageStateWidget *parent) :
 
     // 初始化UI显示
     if (labelState) {
-        labelState->setText("设备未连接");
+        labelState->setText("点击开始采集");
         QFont font = labelState->font();
         font.setPointSize(10);          // 设置字体大小
         font.setBold(true);
@@ -446,13 +446,13 @@ QString healthMnter::formatHealthMessage(const realtime_packet_t& data)
     QString msg;
     msg += "<style>";
     msg += "body { font-family: 'Arial', sans-serif; margin:0; padding:0; }";
-    msg += ".header { color:#afafb0; font-size:24px; font-weight:bold; margin:8px 0 12px 0; text-align:center; }";  // 标题样式
-    msg += ".row { font-size:20px; margin:6px 0; line-height:1.3; }";                                            // 行样式
+    msg += ".header { color:#afafb0; font-size:22px; font-weight:bold; margin:0 0 6px 0; text-align:center; }";  // 标题样式
+    msg += ".row { font-size:17px; margin:6px 0; line-height:1.3; }";                                              // 行样式
     msg += ".item { display:inline-block; width:30%; text-align:left; margin-right:3%; }";                         // 每个项目样式
     msg += ".warning { color:#a22041; font-weight:bold; }";                                                        // 警告样式              
     msg += ".normal { color:#88cb7f; font-weight:bold; }";                                                         // 正常样式 
-    msg += ".value { font-size:18px !important; font-weight:bold; color:#88cb7f !important; }";                     // 数值样式，使用!important强制应用
-    msg += ".separator { border-top: 2px solid #3b3535ff; margin: 12px 0; }";                                     // 分隔线样式
+    msg += ".value { font-size:15px !important; font-weight:bold; color:#88cb7f !important; }";                     // 数值样式，使用!important强制应用
+    // msg += ".separator { border-top: 2px solid #595455; margin: 5px 0; height: 2px; }";                          // 分隔线样式 - 使用更明显的颜色
     msg += "</style>";
 
     // ========== 上半部分：生命体征 ==========
@@ -483,8 +483,8 @@ QString healthMnter::formatHealthMessage(const realtime_packet_t& data)
     msg += QString("<span class='item'>疲劳状态: <span class='%1'>%2</span></span>").arg(fatigueClass).arg(fatigueStatus);
     msg += "</div>";
 
-    // 分隔线
-    msg += "<div class='separator'></div>";
+    // 分隔线 - 使用HR标签替代CSS边框
+    msg += "<hr style='border: none; border-top: 2px solid #595455; margin: 2px 0;'>";
 
     // ========== 下半部分：心率变异性 ==========
     msg += "<div class='header'>心率变异性</div>";

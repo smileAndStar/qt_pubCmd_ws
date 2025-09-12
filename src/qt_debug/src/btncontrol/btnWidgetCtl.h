@@ -1,27 +1,26 @@
-#ifndef WIDGET_H
-#define WIDGET_H
+// 后端按钮控制实例化对象
 
-#include <QWidget>
-#include "ros_cmd_vel/BtnControl.h"
+#ifndef BTNWIDGET_H
+#define BTNWIDGET_H
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class Widget; }
-QT_END_NAMESPACE
+#include <QObject>
+#include <QPushButton>
+#include <QSlider>
+#include <ros/ros.h>
+#include "page_state_widget.h"
+#include "Control.h"
 
-class Widget : public QWidget
+class btncontrol : public QObject
 {
-    // Q_OBJECT 宏用于启用 Qt 的元对象系统功能，如信号和槽机制。
-    // 告诉 Meta‑Object 编译器（moc）这个类需要生成额外的元信息代码。没有这个宏，moc 会跳过该类，不生成所需功能的支持代码
     Q_OBJECT
 
 public:
     /**
-     * @brief Widget 构造函数。
-     * @param nh ROS 节点句柄的引用，用于与 ROS 系统交互。
-     * @param parent 父窗口指针，默认为 nullptr。
+     * @brief btncontrol 构造函数
+     * @param parent 传入ui界面指针
      */
-    Widget(ros::NodeHandle &nh, QWidget *parent = nullptr);
-    ~Widget();
+    explicit btncontrol(ros::NodeHandle &nh, PageStateWidget *parent);
+    ~btncontrol();
 
 private slots:
     /**
@@ -68,21 +67,23 @@ private slots:
      */
     void on_AngulSpeed_valueChanged(int value);
 
-    /**
-     * @brief 处理摇杆按钮点击事件。
-     * 当用户点击摇杆按钮时，打开rocker控制窗口。
-     */
-    void on_BtnRocker_clicked();
-
-    /**
-     * @brief 处理健康检测按钮点击事件。
-     * 当用户点击健康检测按钮时，打开健康检测窗口。
-     */
-    void on_BtnHealth_clicked();
-
 private:
-    Ui::Widget *ui;
+    PageStateWidget* parentWidget; // 持有父页面指针\
+
+    // UI控件缓存
+    // 按键
+    QPushButton* btnLeft;   // 左转
+    QPushButton* btnStop;   // 停止
+    QPushButton* btnRight;  // 右转
+    QPushButton* btnForward;    // 前进
+    QPushButton* btnBackward;   // 后退
+    // 滑块
+    QSlider* lineSpeed;       // 线速度
+    QSlider* angulSpeed;       // 角速度
+
+    // ros 控制
     ros::NodeHandle nh_; // ROS节点句柄，用于与ROS系统交互
-    BtnController *btn_controller;  // 按钮控制器对象指针
+    Controller *btn_controller;  // 按钮控制器对象指针
 };
-#endif // WIDGET_H
+
+#endif // BTNWIDGET_H
